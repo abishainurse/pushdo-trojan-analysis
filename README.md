@@ -22,18 +22,9 @@ This case study documents the analysis of a simulated malware infection involvin
   - **IP:** 192.168.1.96
   - **MAC:** 00:15:C5:DE:C7:3B (Dell Inc.)
 
-**Screenshot placeholder:** `images/security_onion_alerts.png`
+<img src="https://i.imgur.com/iN6aBxO.png" height="80%" width="80%" alt="Screenshot of Alert"/>
 
-### 2. Infection Vector
-- Infection occurred through an **HTTP request** disguised as a legitimate download.
-- IDS flagged multiple suspicious alerts, including:
-  - `ET TROJAN Backdoor.Win32.Pushdo.s Checkin`
-  - `ET TROJAN Pushdo.S CnC response`
-  - `ET POLICY PE EXE or DLL Windows file download HTTP`
-
-**Screenshot placeholder:** `images/wireshark_http_request.png`
-
-### 3. Malicious Files Identified
+### 2. Malicious Files Identified
 Two executables were downloaded by the infected host:
 
 - **gerv.gun**
@@ -46,11 +37,10 @@ Two executables were downloaded by the infected host:
   - Detected by 66+ antivirus engines
   - File type: Win32 executable (~323 KB)
 
-**Screenshot placeholders:**
-- `images/virustotal_gerv.png`
-- `images/virustotal_trow.png`
+<img src="https://i.imgur.com/Wq41qcm.png" height="80%" width="80%" alt="gerv.gun"/>
+<img src="https://i.imgur.com/jjM5el3.png" height="80%" width="80%" alt="trwo"/>
 
-### 4. Malicious Infrastructure
+### 3. Malicious Infrastructure
 - **Domains contacted:**
   - `lounge-haarstudio.nl`
   - `mattied.com`
@@ -60,14 +50,13 @@ Two executables were downloaded by the infected host:
   - `143.95.151.192`
   - `208.67.222.222` (OpenDNS lookup)
   - `208.83.22.34`
-
-**Screenshot placeholder:** `images/networkminer_ips.png`
+  - Note: No screenshots were available for network analysis. Recommendations are based on extracted IOCs and observed alert patterns.
 
 ### 5. Command-and-Control (C2) Activity
 - After infection, the host attempted to contact **C2 servers**.
 - Alerts confirmed both initial check-in and C2 response traffic.
+- Note: No visual capture of C2 traffic was recorded. Observations were made via IDS and alert logs.
 
-**Screenshot placeholder:** `images/c2_alerts.png`
 
 ## Findings
 - A workstation accessed a malicious webpage, leading to **Pushdo trojan infection**.
